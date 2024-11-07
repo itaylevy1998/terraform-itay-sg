@@ -1,7 +1,7 @@
 resource "aws_security_group" "sg-webserver" {
-  name        = "terraform_sg"
+  name        = var.sg_name
   description = "Allow SSH from local, and HTTP/HTTPS from anywhere"
-  vpc_id      = "vpc-0d27f5a2055eabdca"
+  vpc_id      = var.vpc_id
 
   egress {
     from_port   = 0
